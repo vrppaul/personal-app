@@ -1,0 +1,19 @@
+---
+export interface Props {
+    uuid: string
+	date: Date
+    tasksCompleted: number
+    tasksMoved: number
+    tasksTotal: number
+}
+
+const { uuid, date, tasksCompleted, tasksMoved, tasksTotal } = Astro.props;
+---
+
+
+<li class="day-period">
+    <span>{date}</span>
+    <span>{tasksCompleted}</span>
+    <span>{tasksMoved}</span>
+    <span>{tasksTotal}</span>
+</li>

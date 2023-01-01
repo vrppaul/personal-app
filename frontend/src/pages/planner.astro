@@ -1,0 +1,26 @@
+---
+import {startOfWeek, endOfWeek, format} from 'date-fns';
+
+import Layout from '../layouts/Layout.astro';
+import DayPeriod from '../components/periods/DayPeriod.astro';
+import type { Period } from '../types/periods';
+
+const today = new Date();
+const fromDate = format(startOfWeek(today), "yyyy-MM-dd");
+const toDate = format(endOfWeek(today), "yyyy-MM-dd");
+
+const response = await fetch(`http://localhost:8000/api/planner/periods/?from_date=${fromDate}&to_date=${toDate}`);
+const data = await response.json();
+const periods: Period[] = data.items;
+
+
+---
+
+<Layout title="Personal Planner.">
+	<main>
+		<h1>This is a planner.</h1>
+        {periods.map((period) => (
+            <DayPeriod uuid={period.uuid} date={period.from_date} tasksCompleted={period.tasks_completed} tasksMoved={period.tasks_moved} tasksTotal={period.tasks_total} />
+        ))}
+	</main>
+</Layout>
