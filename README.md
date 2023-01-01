@@ -8,8 +8,13 @@ It supports multiple users, so just contact me and ask for a new account, I'll b
 It has a limited set of function, and for now it is capable of:
 - **Simple planner.** Helping you to plan your everyday routines. 
 Make a task for a day in a future, for the whole week, for the whole month, year or just a general TODO-task.
-[Read more]()
+[Read more](#planner)
 
 ## What this app will be capable in the future
 - Training planner and tracker.
 - Notebook
+
+
+## Planner
+It is capable of:
+- Making tasks (add later)
