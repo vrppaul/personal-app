@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Personal Planner.">
+	<main>
+        <h1>Login</h1>
+        <form method="post" id="login-form">
+            <div>
+                <label for="username">Username*</label>
+                <input id="username" type="text" name="username" required/>
+            </div>
+            <div>
+                <label for="password">Password*</label>
+                <input id="password" type="password" name="password" required/>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+	</main>
+</Layout>
+
+<script src="../scripts/authentication/login.js" />
